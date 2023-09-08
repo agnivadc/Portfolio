@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Agniva Dutta Chaudhury</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <style>
+      /* Add this media query for small devices (e.g., smartphones) */
+      @media screen and (max-width: 768px) {
+        body {
+          font-size: 16px; /* Adjust font size for readability */
+        }
+
+        nav ul {
+          flex-direction: column; /* Display navigation links vertically */
+          text-align: center; /* Center-align navigation links */
+          padding: 10px;
+        }
+
+        nav ul li {
+          margin: 10px 0; /* Add some space between navigation links */
+        }
+
+        .firstSection {
+          flex-direction: column; /* Stack content vertically on small screens */
+          text-align: center; /* Center-align content */
+        }
+
+        .leftSection {
+          font-size: 1.5rem; /* Adjust font size for readability */
+        }
+
+        .rightSection img {
+          max-width: 100%; /* Ensure images don't overflow their containers */
+        }
+
+        /* Add more media queries and styles as needed for other sections */
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(3, 3, 75);
+        color: rgb(255, 255, 255);
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: antiquewhite;
+      }
+      nav ul li a:hover {
+        color: rgb(172, 95, 243);
+        font-size: 1.02rem;
+      }
+      main hr {
+        border: 0;
+        background: rgb(172, 95, 243);
+        height: 1.2px;
+        margin: 60px 84px;
+      }
+      .left {
+        font-size: 2rem;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        margin: 23px 0;
+        align-items: center;
+      }
+      .firstSection > div {
+        width: 30%;
+      }
+      .leftSection {
+        font-size: 2rem;
+      }
+      .rightSection img {
+        width: 100%;
+      }
+      .purple {
+        color: rgb(172, 95, 243);
+      }
+      .white {
+        color: rgb(255, 255, 255);
+      }
+      .text-gray {
+        color: gray;
+      }
+      .secondSection {
+        max-width: 80vw;
+        margin: auto;
+        height: 80vh;
+      }
+      .secondSection h1 {
+        font-size: 1.8rem;
+      }
+      .secondSection .box {
+        background: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+      }
+      .secondSection .vertical {
+        background-color: white;
+        width: 1px;
+        height: 93px;
+        margin: 0 180px;
+      }
+
+      .image-top-oracle {
+        width: 113px;
+        position: relative;
+        top: -38px;
+        left: -53px;
+      }
+      .image-top-apisero {
+        width: 118px;
+        position: relative;
+        top: -49px;
+        left: -70px;
+      }
+      .image-top-cisco {
+        width: 69px;
+        position: relative;
+        top: -49px;
+        left: -35px;
+      }
+      .vertical-title {
+        position: relative;
+        top: 75px;
+        width: 220px;
+      }
+      .vertical-description {
+        position: relative;
+        top: 86px;
+        color: gray;
+        width: 220px;
+        font-size: 9px;
+      }
+
+      /* Style for the "About Me" section */
+      .about-me {
+        background-color: rgb(3, 3, 75);
+        padding: 50px 0;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .about-me h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #fffefe;
+      }
+
+      .about-me p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgb(152, 135, 168);
+        margin: 60px 84px;
+        /* margin-bottom: 20px; */
+      }
+
+      /* Style for the "Projects" section */
+      .projects {
+        background-color: rgb(
+          3,
+          3,
+          75
+        ); /* Change the background color as needed */
+        padding: 50px 0;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .projects h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #ffffff;
+      }
+
+      .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .project-details h3 {
+        font-size: 24px;
+        color: rgb(172, 95, 243);
+        margin-bottom: 10px;
+      }
+
+      .project-details p {
+        font-size: 18px;
+        color: #666;
+        margin: 60px 84px;
+      }
+
+      .project-link {
+        text-decoration: none;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .project-link:hover {
+        background-color: #555;
+      }
+
+      .bordered-div {
+        border: 4px solid #1ea2bc; /* 2px wide solid border with color #333 */
+        padding: 20px; /* Optional: Add padding to the content inside the div */
+        border-radius: 10px; /* Optional: Add rounded corners to the border */
+        margin: 60px 84px;
+      }
+
+      /* Add this CSS to your existing stylesheet or a new contact-specific stylesheet */
+
+      /* Contact Section */
+      .contact-section {
+        background-color: rgb(
+          3,
+          3,
+          75
+        ); /* Background color for the contact section */
+        padding: 50px 0; /* Adjust the padding to your preference */
+        text-align: center;
+      }
+
+      /* Contact Container */
+      .contact-container {
+        background-color: rgb(92, 92, 198);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 0 auto; /* Center the contact container horizontally */
+        padding: 20px;
+        text-align: center;
+      }
+
+      .contact-container h1 {
+        color: #fffefe;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      /* Form Styles */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        color: #000000;
+        font-size: 16px;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      input,
+      textarea {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        transition: border-color 0.3s;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #555;
+        outline: none;
+      }
+
+      button {
+        background-color: rgb(0, 0, 0);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 18px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #000000;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #f9c942; /* Change color on hover */
+      }
+
+      .footer-social {
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        margin: 0 10px;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: #f9c942; /* Change color on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Agniva's Portfolio</div>
+        <div class="right">
+          <ul>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Work Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact Me</a></li>
+            </ul>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Hi, My name is <span class="purple">Agniva</span>.
+          <div>I am a passionate</div>
+          <div><span class="purple" id="element"></span></div>
+        </div>
+        <div class="rightSection">
+          <img src="bg1.png" alt="" />
+        </div>
+      </section>
+      <hr />
+
+      <section id="about" class="about-me">
+        <div class="container">
+          <h2>About Me</h2>
+          <p>
+            I am an experienced software developer with over 4 years of proven
+            expertise in designing, developing, and implementing robust software
+            solutions. My educational background includes an MSc. in Computer
+            Science (Negotiated Learning) from University College Dublin with a
+            focus on Java, Cloud, Distributed Systems, and Machine Learning. I
+            also hold a B.E. in Electrical & Electronics Engineering from BMSIT
+            & M.
+          </p>
+          <p>
+            Proficient in a wide range of programming languages, frameworks, and
+            technologies, I am dedicated to delivering high-quality code and
+            contributing to the success of software projects. My skills
+            encompass languages such as Java and JavaScript (Basic), expertise
+            in Data Structures & Algorithms, and proficiency with developer
+            tools like IntelliJ, VS Code, Crystal Reports, and Anypoint Studio.
+          </p>
+          <p>
+            I have hands-on experience with frameworks such as Springboot,
+            Hibernate, and Mulesoft, as well as version control using Git/Github
+            and OAuth authentication. In the realm of cloud and databases, I
+            have worked with AWS, MySQL, and PL/SQL to deliver robust solutions.
+          </p>
+
+          <p>
+            I hold certifications as an AWS Certified Developer - Associate and
+            an Oracle Certified Associate, JAVA SE 8 Programmer. My passion for
+            technology and dedication to delivering impactful software
+            applications drive me to seek new challenges and opportunities in
+            the software development field.
+          </p>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="experience" class="secondSection">
+        <span class="text-gray">What I have done so far</span>
+        <h1>Work Experience</h1>
+        <div class="box">
+          <div class="vertical">
+            <img src="oracle.png" alt="" class="image-top-oracle" />
+            <div class="vertical-title">
+              <span class="purple">Oracle</span>
+              <div>Associate Consultant</div>
+              <div>(2018-2021)</div>
+            </div>
+            <div class="vertical-description">
+              Delivered technical solutions for retail banking operations,
+              collaborating with clients to bridge product gaps using JAVA,
+              JavaScript, HTML, and SQL. Led Client Side validation
+              implementation, resulting in 30% fewer post-implementation issues
+              and 25% reduction in support tickets. Key role in Customization
+              Requirement project, reinforcing fraud prevention across 6000+
+              branches with second-level authorization.
+            </div>
+          </div>
+          <div class="vertical">
+            <img src="apisero.png" alt="" class="image-top-apisero" />
+            <div class="vertical-title">
+              <span class="purple">Apisero</span>
+              <div>Lead Engineer</div>
+              <div>(2021-2022)</div>
+            </div>
+            <div class="vertical-description">
+              Designed APIs and executed Mule implementation aligned with
+              architecture, powering POC development. Analyzed client needs,
+              proposed solutions with estimates and technical recommendations.
+              Led Agile-driven digital transformation, building Mule4 interfaces
+              for Enterprise Pricing and Asset Maintenance, resulting in 30%
+              operational efficiency boost.
+            </div>
+          </div>
+          <div class="vertical">
+            <img src="cisco.png" alt="" class="image-top-cisco" />
+            <div class="vertical-title">
+              <span class="purple">Cisco</span>
+              <div>Software Engineer</div>
+              <div>(2022-2023)</div>
+            </div>
+            <div class="vertical-description">
+              Worked with Java, Spring, DynamoDB, and AWS in Synthetic team for
+              APM product. Introduced Python linter (flake8) for security
+              enhancement, reducing risks for 40,000 production jobs. Boosted
+              code coverage by 5-6% on average across microservices. Active role
+              in DevOps, including AWS EKS upgrades for security compliance.
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="project bordered-div">
+            <div class="project-details">
+              <h3>Blog-X</h3>
+              <p>
+                <span class="white">Description : </span> Welcome to Blog-X, a
+                blogging website designed to provide a platform for bloggers to
+                share their thoughts and stories with the world. All APIs for a
+                blogging application using Springboot and swagger to represent
+                graphically.
+              </p>
+              <p>
+                <span class="white">Skills : </span>HTML, CSS, JavaScript, Java,
+                Springboot, Swagger, etc.
+              </p>
+              <a href="https://github.com/agnivadc/Blog-X" class="project-link"
+                >View Front-end code</a
+              >
+              <a
+                href="https://github.com/agnivadc/Blogging-App-Backend"
+                class="project-link"
+                >View back-end code</a
+              >
+            </div>
+          </div>
+          <div class="project bordered-div">
+            <div class="project-details">
+              <h3>MoviePedia</h3>
+              <p>
+                <span class="white">Description : </span> MoviePedia is your
+                one-stop destination for exploring an extensive collection of
+                movies from various genres and languages, much like IMDb. With a
+                user-friendly interface using a freely exposed API, MoviePedia
+                offers a seamless and enjoyable movie-watching experience.
+              </p>
+              <p>
+                <span class="white">Skills : </span>Dart, Flutter, Android
+                Studio etc.
+              </p>
+              <a
+                href="https://github.com/agnivadc/MoviePedia"
+                class="project-link"
+                >View code</a
+              >
+            </div>
+          </div>
+          <div class="project bordered-div">
+            <div class="project-details">
+              <h3>Covid-19 Tracker</h3>
+              <p>
+                <span class="white">Description : </span> The COVID-19 Tracker
+                Web App is a powerful and user-friendly tool built using Java,
+                Spring Boot, and JSP (JavaServer Pages) that helps users stay
+                informed about the latest developments related to the COVID-19
+                pandemic.
+              </p>
+              <p>
+                <span class="white">Skills : </span>JSP, Java, Springboot,
+                Swagger, etc.
+              </p>
+              <a
+                href="https://github.com/agnivadc/Covid-Tracker"
+                class="project-link"
+                >View code</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="contact" class="contact-section">
+        <div class="contact-container">
+          <h1>Contact Me</h1>
+          <form id="contact-form" action="submit.php" method="POST">
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="input-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">Agniva's Portfolio</div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="#">About</a>
+            <a href="/contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/agnivadc" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://twitter.com/agnivagen" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/agnivadutta/?hl=en" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/agnivaduttachaudhury/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <!-- Add more social media links and icons as needed -->
+        </div>
+        <div class="footer-copyright">&copy; 2023 Agniva Dutta Chaudhury</div>
+      </footer>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["software engineer.", "tech enthusiast.", "learner."],
+        typeSpeed: 50,
+      });
+    </script>
+  </body>
+</html>
